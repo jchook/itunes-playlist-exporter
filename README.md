@@ -41,3 +41,8 @@ cat iexport.php >> iexport
 chmod a+x iexport
 sudo mv iexport /usr/local/bin
 ```
+
+Once installed, the usage of iexport is simplified.
+```bash
+iexport playlist.xml
+```
