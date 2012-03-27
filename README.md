@@ -4,7 +4,7 @@ Easily export actual song files from iTunes playlists.
 
 
 ## License
-This software is free to use under the MIT License
+This software is free to use under the [MIT License](http://www.opensource.org/licenses/mit-license.html "MIT License").
 
 
 ## Why Does This Exist?
