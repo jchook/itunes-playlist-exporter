@@ -185,11 +185,13 @@ $alias = array(
 	'd' => 'destination',
 	'o' => 'destination',
 	't' => 'type',
+	'T' => 'preserve-track-numbers',
 );
 
 $args = array();
 $opts = array(
 	'type' => 'xml',
+	'preserve-track-numbers' => false,
 );
 
 $cmd = array_shift($argv);
@@ -292,7 +294,10 @@ switch($opts['type']) {
 			$trackNumber = 1;
 			foreach ($list['tracks'] as $track)
 			{
-				$destname = $trackNumber . ' ' . trim(ltrim(basename($track), '1234567890'));
+				$destname = trim(basename($track));
+				if (!$opts['preserve-track-numbers']) {
+					$destname = $trackNumber . ' ' . ltrim($destname, '1234567890');
+				}
 				$destpath = $dest . '/' . $destname;
 				$cmds[] = 'cp "' . $track . '" "' . $destpath . '"';
 				$trackNumber++;
