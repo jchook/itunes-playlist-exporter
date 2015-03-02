@@ -263,7 +263,7 @@ switch($opts['type']) {
 		$tracks = array();
 		foreach ($xml['Tracks'] as $id => $track) {
 			if (isset($track['Location'])) {
-				$find = '^file\:\/\/localhost';
+				$find = '^file\:\/\/';
 				$replace = '';
 				$tracks[$id] = preg_replace("/$find/", $replace, urldecode($track['Location']));
 			}
