@@ -192,6 +192,7 @@ $args = array();
 $opts = array(
 	'type' => 'xml',
 	'preserve-track-numbers' => false,
+	'destination' => null,
 );
 
 $cmd = array_shift($argv);
@@ -304,7 +305,7 @@ switch($opts['type']) {
 			}
 			
 			foreach ($cmds as $cmd) {
-				echo "$cmd\n";
+				// echo "$cmd\n";
 				echo shell_exec($cmd);
 			}
 		}
